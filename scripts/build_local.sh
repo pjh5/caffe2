@@ -7,6 +7,13 @@
 
 set -ex
 
+# Needs to be at least 10.9 for c++11 support on macOS. This is needed for
+# setuptools, which calls into distutils, whose default for this seems to be
+# 10.6
+if [ "$(uname)" == 'Darwin' ]; then
+  MACOSX_DEPLOYMENT_TARGET=10.9
+fi
+
 CAFFE2_ROOT="$( cd "$(dirname "$0")"/.. ; pwd -P)"
 
 CMAKE_ARGS=()

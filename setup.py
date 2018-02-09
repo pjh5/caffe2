@@ -141,6 +141,7 @@ class cmake_build(Caffe2Command):
                 '-DBUILD_SHARED_LIBS=OFF',
                 '-DPYTHON_EXECUTABLE:FILEPATH={}'.format(sys.executable),
                 '-DPYTHON_INCLUDE_DIR={}'.format(sysconfig.get_python_inc()),
+                '-DPYTHON_LIBRARY={}'.format(sysconfig.get_python_lib()),
                 '-DBUILD_TEST=OFF',
                 '-BUILD_BENCHMARK=OFF',
                 '-DBUILD_BINARY=OFF',
