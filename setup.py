@@ -244,17 +244,12 @@ packages = setuptools.find_packages()
 install_requires.extend(['future',
                          'graphviz',
                          'hypothesis',
-                         'jupyter',
-                         'matplotlib',
                          'numpy',
                          'protobuf',
                          'pydot',
                          'python-nvd3',
                          'pyyaml',
-                         'requests',
                          'scikit-image',
-                         'scipy',
-                         'setuptools',
                          'six',
                          ])
 
