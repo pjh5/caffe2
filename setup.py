@@ -241,8 +241,7 @@ ext_modules = [
 
 packages = setuptools.find_packages()
 
-install_requires.extend(['eigen',
-                         'future',
+install_requires.extend(['future',
                          'graphviz',
                          'hypothesis',
                          'jupyter',
