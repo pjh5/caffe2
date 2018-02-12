@@ -241,14 +241,14 @@ ext_modules = [
 
 packages = setuptools.find_packages()
 
-install_requires.extend(['protobuf',
-                         'numpy',
-                         'flask',
+install_requires.extend(['eigen',
                          'future',
                          'graphviz',
                          'hypothesis',
                          'jupyter',
                          'matplotlib',
+                         'numpy',
+                         'protobuf',
                          'pydot',
                          'python-nvd3',
                          'pyyaml',
@@ -257,7 +257,7 @@ install_requires.extend(['protobuf',
                          'scipy',
                          'setuptools',
                          'six',
-                         'tornado'])
+                         ])
 
 ################################################################################
 # Test
