@@ -137,6 +137,7 @@ class cmake_build(Caffe2Command):
                 '-DBUILD_TEST=OFF',
                 '-DBUILD_BENCHMARK=OFF',
                 '-DBUILD_BINARY=OFF',
+                '-DUSE_MPI=OFF',
             ]
             if NINJA:
                 cmake_args.extend(['-G', 'Ninja'])
@@ -226,30 +227,23 @@ ext_modules = [
 
 packages = setuptools.find_packages()
 
-install_requires.extend(['protobuf',
-                         'numpy',
-                         'flask',
-                         'future',
-                         'graphviz',
-                         'hypothesis',
-                         'jupyter',
-                         'matplotlib',
-                         'pydot',
-                         'python-nvd3',
-                         'pyyaml',
-                         'requests',
-                         'scikit-image',
-                         'scipy',
-                         'setuptools',
-                         'six',
-                         'tornado'])
+install_requires.extend([
+    'future',
+    'leveldb',
+    'numpy',
+    'opencv-python',
+    'protobuf',
+    'python-nvd3',
+    'scikit-image',
+    'six',
+])
 
 ################################################################################
 # Test
 ################################################################################
 
 setup_requires.append('pytest-runner')
-tests_require.extend(['pytest-cov', 'hypothesis'])
+tests_require.extend(['pytest-cov', 'hypothesis', 'tabulate', 'pydot'])
 
 ################################################################################
 # Final
@@ -258,7 +252,7 @@ tests_require.extend(['pytest-cov', 'hypothesis'])
 setuptools.setup(
     name='caffe2',
     version=VersionInfo.version,
-    description='Caffe2',
+    description='Caffe2 is a lightweight, modular, and scalable deep learning framework.',
     ext_modules=ext_modules,
     cmdclass=cmdclass,
     packages=packages,
